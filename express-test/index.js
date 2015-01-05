@@ -24,6 +24,7 @@ var TestGenerator = yeoman.generators.NamedBase.extend({
 		}
 
 		this.template('_.server.model.test.js', 'app/tests/' + this.slugifiedModelName + '.server.model.test.js')
+		this.template('_.server.routes.test.js', 'app/tests/' + this.slugifiedModelName + '.server.routes.test.js')
 	}
 });
 
