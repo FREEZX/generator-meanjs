@@ -67,16 +67,16 @@ describe('<%= classifiedModelName %> CRUD tests', function() {
 
 						// Get a list of <%= slugifiedPluralModelName %>
 						agent.get('/<%= slugifiedPluralModelName %>')
-							.end(function(<%= slugifiedPluralModelName %>GetErr, <%= slugifiedPluralModelName %>GetRes) {
+							.end(function(<%= camelizedModelName %>GetErr, <%= camelizedModelName %>GetRes) {
 								// Handle <%= camelizedModelName %> save error
-								if (<%= slugifiedPluralModelName %>GetErr) done(<%= slugifiedPluralModelName %>GetErr);
+								if (<%= camelizedModelName %>GetErr) done(<%= camelizedModelName %>GetErr);
 
-								// Get <%= slugifiedPluralModelName %> list
-								var <%= slugifiedPluralModelName %> = <%= slugifiedPluralModelName %>GetRes.body;
+								// Get <%= camelizedModelName %> list
+								var <%= camelizedModelName %> = <%= camelizedModelName %>GetRes.body;
 
 								// Set assertions
-								(<%= slugifiedPluralModelName %>[0].user._id).should.equal(userId);
-								(<%= slugifiedPluralModelName %>[0].title).should.match('<%= classifiedModelName %> Title');
+								(<%= camelizedModelName %>[0].user._id).should.equal(userId);
+								(<%= camelizedModelName %>[0].title).should.match('<%= classifiedModelName %> Title');
 
 								// Call the assertion callback
 								done();
